@@ -1,0 +1,36 @@
+{
+  "name": "my-little-poly",
+  "version": "0.0.0",
+  "description": "🐴 A polyfill.io small koa server",
+  "main": "lib/app.js",
+  "repository": "https://github.com/Kozea/my-little-poly",
+  "author": "Florian Mounier",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint lib bin --ext=.js,.mjs",
+    "start": "node --experimental-modules bin/index.mjs",
+    "postinstall": "cd node_modules/polyfill-service-and-library/packages/polyfill-library && npm install && npm run build"
+  },
+  "pre-commit": "lint",
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.9.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-react": "^7.11.1",
+    "pre-commit": "^1.2.2"
+  },
+  "files": [
+    "lib/"
+  ],
+  "importSort": {
+    ".js, .jsx": {
+      "parser": "babylon",
+      "style": "module"
+    }
+  },
+  "dependencies": {
+    "koa": "^2.6.2",
+    "koa-logger": "^3.2.0",
+    "polyfill-service-and-library": "https://github.com/Financial-Times/polyfill-service"
+  }
+}

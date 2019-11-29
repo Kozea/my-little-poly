@@ -2,7 +2,7 @@
 
 import http from 'http'
 
-import app from '../lib'
+import app from '../lib/index.mjs'
 
 const { SOCKET, HOST, PORT } = process.env
 
